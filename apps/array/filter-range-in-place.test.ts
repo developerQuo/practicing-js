@@ -15,11 +15,15 @@ describe('특정 범위에 속하는 요소 찾기(배열 변경하기)', () => 
     })
 
     test('elements are between number a and number b', () => {
-        
+        filterRangeInPlace(arr, 4, 11)
+        arr.forEach(num => {
+            expect(num).toBeGreaterThanOrEqual(4)
+            expect(num).toBeLessThanOrEqual(11)
+        })
     })
 
     it("doesn't return anything else", () => {
-        filterRangeInPlace(arr, 4, 11)
+        filterRangeInPlace(arr, 4, 11) 
         expect(arr).toBeUndefined; 
     })
 })  
