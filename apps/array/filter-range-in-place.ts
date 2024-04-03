@@ -5,7 +5,7 @@ function filterRangeInPlace(arr: Array<number>, a: number, b: number){
             removeList.push(i)
         }
     }
-    console.log(removeList)
+    
     for (let i = arr.length - 1; i >= 0; i--){
         if (removeList.includes(i)){
             arr.splice(i, 1)
