@@ -1,3 +1,17 @@
 export default function aclean(words: Array<string>) {
-	return words.slice();
+	const uniqueWords = new Array(
+		...new Set(words.map((word) => ascNomarlize(word)))
+	);
+	return uniqueWords.map((cur) => {
+		for (let word of words) {
+			if (cur === ascNomarlize(word)) {
+				return word;
+			}
+		}
+		return cur;
+	});
+}
+
+export function ascNomarlize(word: string) {
+	return word.split('').sort().join('').toLowerCase();
 }
