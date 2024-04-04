@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from '@jest/globals';
+import { describe, expect, it } from '@jest/globals';
 import unique from './unique';
 
 describe('배열에서 중복 요소 제거하기', () => {
@@ -15,14 +15,34 @@ describe('배열에서 중복 요소 제거하기', () => {
 			':-O',
 		];
 
-		const hasUnique = unique(values).every((cur, i, array) => {
-			const snapshot = array.slice();
-			snapshot.splice(i, 1);
-			return !snapshot.includes(cur);
-		});
-
-		expect(hasUnique).toBeTruthy();
+		expect(hasUnique(values)).toBeTruthy();
 	});
 
-	it("doesn't have data type constraints", () => {});
+	it("doesn't have data type constraints", () => {
+		let values = [
+			true,
+			'robin',
+			32,
+			{ apple: 1 },
+			undefined,
+			NaN,
+			true,
+			'robin',
+			32,
+			{ apple: 1 },
+			undefined,
+			NaN,
+			'mutation',
+		];
+
+		expect(hasUnique(values)).toBeTruthy();
+	});
 });
+
+function hasUnique(values: Array<any>) {
+	return unique(values).every((cur, i, array) => {
+		const snapshot = array.slice();
+		snapshot.splice(i, 1);
+		return !snapshot.includes(cur);
+	});
+}
