@@ -15,3 +15,5 @@ export default function aclean(words: Array<string>) {
 export function ascNomarlize(word: string) {
 	return word.split('').sort().join('').toLowerCase();
 }
+
+//TODO: map, set 기능을 이용해서 풀어보기
