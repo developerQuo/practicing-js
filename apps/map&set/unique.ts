@@ -1,5 +1,5 @@
 function unique(arr: Array<any>) {
-	return arr;
+	return new Array(new Set(arr));
 }
 
 export default unique;
