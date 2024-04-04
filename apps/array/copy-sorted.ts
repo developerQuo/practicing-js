@@ -1,5 +1,5 @@
 function copySorted(arr: Array<string>){
-    return arr
+    return arr.sort()
 }
 
 export default copySorted;
