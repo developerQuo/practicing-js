@@ -8,7 +8,7 @@ describe('배열 복사본을 정렬하기', () => {
         arr = ["React", "Java", "Dart", "Python"];
     })
 
-    it('sorts array in ascending order', () => {
+    it('sorts array in ascending order and returns sorted array', () => {
         let sorted = copySorted(arr);
         sorted.forEach((cur, i, array) => {
             if (i) {
