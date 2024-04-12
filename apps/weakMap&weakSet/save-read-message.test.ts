@@ -26,22 +26,21 @@ describe("'읽음'상태인 메시지 저장하기", () => {
 	});
 
 	test('messages array have not property', () => {
-		let marks: Array<boolean> = pushMarks(messages);
+		let hasProp = checkProps(messages);
 
-		expect(marks.some((check) => check)).toBeFalsy();
+		expect(hasProp).toBeFalsy();
 
 		Object.assign(messages, { testProperty: 3 });
 
-		marks = pushMarks(messages);
+		hasProp = checkProps(messages);
 
-		expect(marks.some((check) => check)).toBeTruthy();
+		expect(hasProp).toBeTruthy();
 	});
 });
 
-function pushMarks(messages: MessageArray) {
-	let marks: Array<boolean> = [];
+function checkProps(messages: MessageArray) {
 	for (let key in messages) {
-		marks.push(isNaN(+key));
+		if (isNaN(+key)) return true;
 	}
-	return marks;
+	return false;
 }
