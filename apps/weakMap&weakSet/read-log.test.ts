@@ -12,6 +12,12 @@ describe('읽은 날짜 저장하기', () => {
 		let readDate: WeakMap<Message, Date> = saveReadLog(messages[0]);
 
 		expect(readDate.has(messages[0])).toBeTruthy();
-		expect(typeof readDate.get(messages[0])).toBe('Date');
+
+		expect(toString(readDate.get(messages[0]))).toBe(toString(new Date()));
 	});
 });
+
+function toString(date: Date | undefined) {
+	if (!date) throw Error('no date');
+	return date.toLocaleDateString();
+}
