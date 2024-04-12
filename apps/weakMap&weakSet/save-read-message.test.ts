@@ -9,7 +9,10 @@ let messages = [
 
 describe("'읽음'상태인 메시지 저장하기", () => {
 	it('can save read status', () => {
-		let readSet = saveReadStatus(messages[0]);
+		let readSet = saveReadStatus();
+
+		readSet.add(messages[0]);
+
 		expect(readSet.has(messages[0])).toBeTruthy();
 		expect(readSet.has(messages[1])).toBeFalsy();
 	});
