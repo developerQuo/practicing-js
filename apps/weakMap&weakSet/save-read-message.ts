@@ -1,4 +1,5 @@
-export type Message = { text: string; from: string };
+type Message = { text: string; from: string };
+export type MessageArray = Array<Message>;
 export type ReadStatus = WeakSet<Message>;
 
 export default function saveReadStatus(): ReadStatus {

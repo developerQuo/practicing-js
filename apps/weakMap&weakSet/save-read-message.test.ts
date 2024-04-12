@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, it, test } from '@jest/globals';
-import saveReadStatus, { Message } from './save-read-message';
+import saveReadStatus, { MessageArray } from './save-read-message';
 
 describe("'읽음'상태인 메시지 저장하기", () => {
-	let messages: Array<Message>;
+	let messages: MessageArray;
 
 	beforeEach(() => {
 		messages = [
@@ -26,21 +26,22 @@ describe("'읽음'상태인 메시지 저장하기", () => {
 	});
 
 	test('messages array have not property', () => {
-		let propCheck: Array<boolean> = [];
+		let marks: Array<boolean> = pushMarks(messages);
 
-		for (let key in messages) {
-			propCheck.push(isNaN(+key));
-		}
-
-		expect(propCheck.some((check) => check)).toBeFalsy();
-
-		propCheck = [];
+		expect(marks.some((check) => check)).toBeFalsy();
 
 		Object.assign(messages, { testProperty: 3 });
-		for (let key in messages) {
-			propCheck.push(isNaN(+key));
-		}
-		console.log(propCheck);
-		expect(propCheck.some((check) => check)).toBeTruthy();
+
+		marks = pushMarks(messages);
+
+		expect(marks.some((check) => check)).toBeTruthy();
 	});
 });
+
+function pushMarks(messages: MessageArray) {
+	let marks: Array<boolean> = [];
+	for (let key in messages) {
+		marks.push(isNaN(+key));
+	}
+	return marks;
+}
