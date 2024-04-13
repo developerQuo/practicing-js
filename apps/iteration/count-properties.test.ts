@@ -25,4 +25,8 @@ describe('프로퍼티 값 더하기', () => {
 	it('returns 0 for empty object', () => {
 		expect(count({})).toBe(0);
 	});
+
+	it('ignores symbolic properties', () => {
+		expect(count({ [Symbol('id')]: 1 })).toBe(0);
+	});
 });
