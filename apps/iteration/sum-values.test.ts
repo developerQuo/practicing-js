@@ -22,5 +22,7 @@ describe('프로퍼티 값 더하기', () => {
 		).toBe(-1);
 	});
 
-	it('returns 0 for empty object', () => {});
+	it('returns 0 for empty object', () => {
+		expect(sumSalaries({})).toBe(0);
+	});
 });
