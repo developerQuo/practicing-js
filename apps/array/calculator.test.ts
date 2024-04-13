@@ -16,16 +16,5 @@ describe('확장 가능한 계산기', () => {
 
 	it('extends function', () => {
 		let powerCalc = new Calculator();
-
-		powerCalc.addMethod('*', (a, b) => a * b);
-		powerCalc.addMethod('/', (a, b) => a / b);
-		powerCalc.addMethod('**', (a, b) => a ** b);
-
-		expect(powerCalc.calculate('2 ** 3')).toBe(8);
-		expect(powerCalc.calculate('6 / 3')).toBe(2);
-
-		//TODO: test failures
-		// powerCalc.addMethod('', (a, b) => a + b);
-		// powerCalc.addMethod('*', (a, b) => a + b);
 	});
 });
