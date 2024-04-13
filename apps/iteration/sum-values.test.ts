@@ -17,7 +17,7 @@ describe('프로퍼티 값 더하기', () => {
 			sumSalaries({
 				a: 1,
 				b: 2,
-				c: -3,
+				c: -4,
 			})
 		).toBe(-1);
 	});
