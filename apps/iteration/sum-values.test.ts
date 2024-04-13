@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, test } from '@jest/globals';
+import { describe, expect, it } from '@jest/globals';
 import sumSalaries from './sum-values';
 
 describe('프로퍼티 값 더하기', () => {
