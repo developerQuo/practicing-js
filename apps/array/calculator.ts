@@ -7,6 +7,9 @@ export default class Calculator {
 		if (formulaElements.some((el) => el !== '0' && !Boolean(el))) {
 			throw Error('There were empty string or undefined or null');
 		}
+		if (formulaElements.some((el, index) => index % 2 && +el)) {
+			throw Error('Only mathmatical operators are allowed between numbers');
+		}
 
 		return formulaElements.reduce((total, stringValue, index, formulaArray) => {
 			// console.log(formulaArray);
