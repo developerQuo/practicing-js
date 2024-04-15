@@ -1,5 +1,11 @@
 type Salaries = Record<string, any>;
 
 export default function topSalary(salaries: Salaries) {
-	return Object.entries(salaries).sort((prev, next) => next[1] - prev[1])[0][0];
+	const salariesEntries = Object.entries(salaries);
+
+	if (salariesEntries.length === 0) return null;
+
+	const [topEarner] = salariesEntries.sort((prev, next) => next[1] - prev[1]);
+	const [name] = topEarner;
+	return name;
 }
