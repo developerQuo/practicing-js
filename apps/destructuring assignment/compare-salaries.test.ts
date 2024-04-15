@@ -14,5 +14,7 @@ describe('최대 급여 계산하기', () => {
 
 	it('returns null for empty salaries', () => {
 		let salaries = {};
+
+		expect(topSalary(salaries)).toBe(null);
 	});
 });
