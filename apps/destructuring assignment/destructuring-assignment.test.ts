@@ -7,5 +7,11 @@ describe('구조 분해 할당', () => {
 			name: 'John',
 			years: 30,
 		};
+
+		expect(destructuringAssignment(user)).toBe({
+			name: 'John',
+			age: 30,
+			isAdmin: false,
+		});
 	});
 });
