@@ -8,7 +8,7 @@ describe('구조 분해 할당', () => {
 			years: 30,
 		};
 
-		expect(destructuringAssignment(user)).toBe({
+		expect(destructuringAssignment(user)).toStrictEqual({
 			name: 'John',
 			age: 30,
 			isAdmin: false,
