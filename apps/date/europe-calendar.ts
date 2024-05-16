@@ -1,5 +1,5 @@
 function getLocalDay(date: Date) {
-	return;
+	return date.getDay() ?? 7;
 }
 
 export default getLocalDay;
