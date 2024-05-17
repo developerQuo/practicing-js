@@ -1,5 +1,5 @@
 import { describe, expect, it } from '@jest/globals';
-import { serialize } from './serialization';
+import { deserialize, serialize } from './serialization';
 
 let user = {
 	name: 'John Smith',
@@ -12,5 +12,10 @@ describe('객체를 JSON으로 바꾼 후 다시 객체로 바꾸기', () => {
 		expect(serialize(user)).toMatch(/\"age\":35/g);
 	});
 
-	it('deserializes a JSON to object', () => {});
+	it('deserializes a JSON to object', () => {
+		expect(deserialize(serialize(user))).toStrictEqual({
+			name: 'John Smith',
+			age: 35,
+		});
+	});
 });
