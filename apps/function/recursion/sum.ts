@@ -18,8 +18,9 @@ function sumRecursion(num: number) {
 }
 
 // 3. 등차수열
+// 공식: n * (2*a + (n - 1) * d) / 2
 function sumAP(num: number) {
-	return 0;
+	return (num * (2 * (2 * 1 - 1) + (num - 1) * 1)) / 2;
 }
 
 export { sumForLoop, sumRecursion, sumAP };
