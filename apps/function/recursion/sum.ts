@@ -14,3 +14,5 @@ function sumRecursion(num: number) {
 function sumAP(num: number) {
 	return 0;
 }
+
+export { sumForLoop, sumRecursion, sumAP };
