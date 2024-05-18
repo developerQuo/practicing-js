@@ -11,7 +11,10 @@ function sumForLoop(num: number) {
 
 // 2. recursion
 function sumRecursion(num: number) {
-	return 0;
+	if (num === 1) {
+		return 1;
+	}
+	return num + sumRecursion(num - 1);
 }
 
 // 3. 등차수열
