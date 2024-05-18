@@ -2,7 +2,11 @@
 
 // 1. for loop
 function sumForLoop(num: number) {
-	return 0;
+	let sum = 0;
+	for (let i = 1; i <= num; i++) {
+		sum += i;
+	}
+	return sum;
 }
 
 // 2. recursion
