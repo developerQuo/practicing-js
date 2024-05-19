@@ -1,3 +1,6 @@
 export function factorial(num: number) {
-	return 0;
+	if (num === 1) {
+		return 1;
+	}
+	return num * factorial(num - 1);
 }
