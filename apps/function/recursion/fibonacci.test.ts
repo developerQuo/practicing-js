@@ -8,5 +8,10 @@ describe('피보나치 수 계산하기', () => {
 		expect(fib(77)).toBe(5527939700884757);
 	});
 
-	it('completes within 1 second', () => {});
+	it.only('completes within 1 second', () => {
+		const start = Date.now();
+		fib(100);
+		const end = Date.now();
+		expect(end - start).toBeLessThan(1000);
+	});
 });
