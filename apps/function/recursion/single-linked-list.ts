@@ -16,4 +16,9 @@ export function printListForLoop(list: List) {
 }
 
 // recursion
-export function printListRecursion(list: List) {}
+export function printListRecursion(list: List) {
+	console.log(list.value);
+	if (list.next) {
+		printListRecursion(list.next);
+	}
+}

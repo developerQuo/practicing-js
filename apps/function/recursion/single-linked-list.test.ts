@@ -1,27 +1,29 @@
-import { describe, expect, it, jest } from '@jest/globals';
+import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 import {
 	List,
 	printListForLoop,
 	printListRecursion,
 } from './single-linked-list';
 
-let list: List = {
-	value: 1,
-	next: {
-		value: 2,
-		next: {
-			value: 3,
-			next: {
-				value: 4,
-				next: null,
-			},
-		},
-	},
-};
-
-console.log = jest.fn();
-
 describe('단일 연결 리스트 출력하기', () => {
+	let list: List;
+	beforeEach(() => {
+		list = {
+			value: 1,
+			next: {
+				value: 2,
+				next: {
+					value: 3,
+					next: {
+						value: 4,
+						next: null,
+					},
+				},
+			},
+		};
+
+		console.log = jest.fn();
+	});
 	it('prints values one by one in order (for loop)', () => {
 		printListForLoop(list);
 
