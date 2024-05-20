@@ -5,8 +5,6 @@ import {
 	printListRecursion,
 } from './single-linked-list';
 
-jest.mock('console');
-
 let list: List = {
 	value: 1,
 	next: {
@@ -20,6 +18,8 @@ let list: List = {
 		},
 	},
 };
+
+console.log = jest.fn();
 
 describe('단일 연결 리스트 출력하기', () => {
 	it('prints values one by one in order (for loop)', () => {
