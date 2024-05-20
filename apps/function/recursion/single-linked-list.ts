@@ -5,13 +5,11 @@ export type List = {
 
 // for loop
 export function printListForLoop(list: List) {
-	while (true) {
-		console.log(list.value);
-		if (list.next) {
-			list = list.next;
-		} else {
-			break;
-		}
+	let tmp: List | null = list;
+
+	while (tmp) {
+		console.log(tmp.value);
+		tmp = tmp.next;
 	}
 }
 
