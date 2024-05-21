@@ -11,8 +11,6 @@ describe('클로저를 이용하여 합 구하기', () => {
 		expect(() => sum(NaN)(2)).toThrow(new Error("There isn't number"));
 		expect(() => sum(5)(1 / 0)).toThrowError("There isn't number");
 	});
-
-	it('uses a closure to remember state', () => {});
 });
 
 // NOTE: jest가 error를 탐지하기 위해서 익명함수가 실행할 함수를 감싸는 형태(() => f(n))로 인자를 넣어야 한다.
