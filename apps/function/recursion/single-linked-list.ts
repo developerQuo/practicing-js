@@ -20,3 +20,9 @@ export function printListRecursion(list: List) {
 		printListRecursion(list.next);
 	}
 }
+
+// for loop(reverse)
+export function forLoopReverseOrder(list: List) {}
+
+// recursion(reverse)
+export function recursionReverseOrder(list: List) {}
