@@ -4,6 +4,8 @@ export function isBetween(start: number, end: number) {
 	};
 }
 
-export function inArray(arr: number[]): number[] {
-	return [];
+export function inArray(arr: number[]) {
+	return function (element: number) {
+		return arr.includes(element);
+	};
 }
