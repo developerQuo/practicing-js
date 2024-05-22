@@ -1,11 +1,13 @@
-export function isBetween(start: number, end: number) {
-	return function (element: number) {
-		return element >= start && element <= end ? true : false;
-	};
-}
+type User = {
+	name: string;
+	age: number;
+	surname: string;
+};
 
-export function inArray(arr: number[]) {
-	return function (element: number) {
-		return arr.includes(element);
+export type Users = User[];
+
+export function byField(field: string) {
+	return function sort(prevUser: User, nextUser: User) {
+		return prevUser[field] > nextUser[field] ? 1 : -1;
 	};
 }

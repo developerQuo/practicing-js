@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, it } from '@jest/globals';
-import { byField } from './sort';
+import { Users, byField } from './sort';
 
 describe('필드를 기준으로 정렬하기', () => {
-	let users;
+	let users: Users;
 
 	beforeEach(() => {
 		users = [
