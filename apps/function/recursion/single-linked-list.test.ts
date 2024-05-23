@@ -33,10 +33,8 @@ describe('단일 연결 리스트 출력하기', () => {
 
 		for (let value = 1; value < 5; value++) {
 			expect(console.log).toHaveBeenCalledWith(value);
-			if (value == 4) {
-				expect(console.log).toHaveBeenCalledTimes(value);
-			}
 		}
+		expect(console.log).toHaveBeenCalledTimes(4);
 	});
 
 	it('prints values one by one in order (recursion)', () => {
@@ -44,10 +42,8 @@ describe('단일 연결 리스트 출력하기', () => {
 
 		for (let value = 1; value < 5; value++) {
 			expect(console.log).toHaveBeenCalledWith(value);
-			if (value == 4) {
-				expect(console.log).toHaveBeenCalledTimes(value);
-			}
 		}
+		expect(console.log).toHaveBeenCalledTimes(4);
 	});
 
 	it('prints values one by one in reverse order (for loop)', () => {

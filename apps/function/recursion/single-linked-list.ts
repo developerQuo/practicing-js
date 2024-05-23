@@ -22,7 +22,22 @@ export function printListRecursion(list: List) {
 }
 
 // for loop(reverse)
-export function forLoopReverseOrder(list: List) {}
+export function forLoopReverseOrder(list: List) {
+	let copiedList: List | null = list;
+	let values: number[] = [];
+
+	while (copiedList) {
+		values.push(copiedList.value);
+		copiedList = copiedList.next;
+	}
+
+	values.reverse().forEach((value) => console.log(value));
+}
 
 // recursion(reverse)
-export function recursionReverseOrder(list: List) {}
+export function recursionReverseOrder(list: List) {
+	if (list.next) {
+		printListRecursion(list.next);
+	}
+	console.log(list.value);
+}
