@@ -4,5 +4,5 @@ type User = {
 };
 
 export function makeNameList(arr: User[]) {
-	return [];
+	return arr.map((user) => user.name);
 }
