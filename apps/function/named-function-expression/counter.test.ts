@@ -38,6 +38,11 @@ describe('숫자 설정과 감소가 가능한 counter 만들기', () => {
 			expect(counter.set(10)).toBe(10);
 		});
 
-		it('decrease counter 1 by calling decrease property', () => {});
+		it('decrease counter 1 by calling decrease property', () => {
+			let counter = makeClosureCounter();
+
+			expect(counter.decrease()).toBe(0);
+			expect(counter.decrease()).toBe(-1);
+		});
 	});
 });
