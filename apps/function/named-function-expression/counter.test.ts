@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, test } from '@jest/globals';
+import { describe, expect, it } from '@jest/globals';
 import { makeClosureCounter, makeNFECounter } from './counter';
 
 describe('숫자 설정과 감소가 가능한 counter 만들기', () => {

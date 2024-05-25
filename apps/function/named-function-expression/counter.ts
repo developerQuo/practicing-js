@@ -5,7 +5,9 @@ export function makeNFECounter() {
 		return counter.count++;
 	}
 
-	// TODO: 왜 counter 함수 내부에서는 초기화 할 수 없지?
+	// 왜 counter 함수 내부에서는 초기화 할 수 없지?
+	// => counter의 렉시컬 환경에서는 counter가 정의된 변수가 없으므로,
+	//    counter가 정의된 외부 렉시컬 환경에서 호출이 가능하다.
 	counter.count = count;
 	counter.set = (num: number) => (counter.count = num);
 	counter.decrease = () => counter.count--;
