@@ -10,7 +10,11 @@ describe('숫자 설정과 감소가 가능한 counter 만들기', () => {
 			expect(counter()).toBe(1);
 		});
 
-		it('sets value by calling set property', () => {});
+		it('sets value by calling set property', () => {
+			let counter = makeNFECounter();
+
+			expect(counter.set(10)).toBe(10);
+		});
 
 		it('decrease counter 1 by calling decrease property', () => {});
 	});
