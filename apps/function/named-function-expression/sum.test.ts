@@ -14,6 +14,8 @@ describe('임의의 수만큼 있는 괄호를 이용해 합계 구하기', () =
 			expect(String(sum(6)(-1)(-2)(-3))).toBe('0');
 		});
 
-		test('zero', () => {});
+		test('zero', () => {
+			expect(String(sum(0)(1)(2)(3)(4)(5))).toBe('15');
+		});
 	});
 });
