@@ -9,7 +9,10 @@ describe('임의의 수만큼 있는 괄호를 이용해 합계 구하기', () =
 			expect(String(sum(1)(2)(3))).toBe('6');
 		});
 
-		test('negative', () => {});
+		test('negative', () => {
+			expect(String(sum(5)(-1)(2))).toBe('6');
+			expect(String(sum(6)(-1)(-2)(-3))).toBe('0');
+		});
 
 		test('zero', () => {});
 	});
