@@ -13,4 +13,10 @@ export function makeNFECounter() {
 	return counter;
 }
 
-export function makeClosureCounter() {}
+export function makeClosureCounter() {
+	let count = 0;
+
+	return function counter() {
+		return count++;
+	};
+}
