@@ -1,4 +1,6 @@
 # js/ts 연습
-## todo
-- lint, prettier 설정
-- ~~코드 수정시 테스트 자동 실행 끄기~~ vscode 자동 저장 & jest 저장시 실행이어서 계속 자동 저장되었음.  &rarr; vscode 자동 저장 off
+
+## 안푼 문제
+
+array: https://ko.javascript.info/array-methods#ref-782
+date: https://ko.javascript.info/date#ref-252
