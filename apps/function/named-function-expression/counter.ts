@@ -15,9 +15,13 @@ export function makeNFECounter() {
 
 export function makeClosureCounter() {
 	let count = 0;
+
 	function counter() {
 		return count++;
 	}
+
 	counter.set = (num: number) => (count = num);
+	counter.decrease = () => count--;
+
 	return counter;
 }
