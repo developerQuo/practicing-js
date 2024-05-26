@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, jest } from '@jest/globals';
-import { setIntervalPrintNumbers } from './print-number';
+import { setIntervalPrintNumbers, setTimerPrintNumbers } from './print-number';
 
 jest.useFakeTimers();
 jest.spyOn(global, 'setInterval');
@@ -23,5 +23,16 @@ describe('일 초 간격으로 숫자 출력하기', () => {
 		expect(console.log).toHaveBeenCalledWith(4);
 	});
 
-	it('prints numbers at one-second intervals (setTimer)', () => {});
+	it('prints numbers at one-second intervals (setTimer)', () => {
+		setTimerPrintNumbers(2, 4);
+
+		jest.advanceTimersByTime(4000);
+
+		expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 1000);
+		expect(setTimeout).toHaveBeenCalledTimes(1);
+
+		expect(console.log).toHaveBeenCalledWith(2);
+		expect(console.log).toHaveBeenCalledWith(3);
+		expect(console.log).toHaveBeenCalledWith(4);
+	});
 });
