@@ -29,7 +29,7 @@ describe('일 초 간격으로 숫자 출력하기', () => {
 		jest.advanceTimersByTime(4000);
 
 		expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 1000);
-		expect(setTimeout).toHaveBeenCalledTimes(1);
+		expect(setTimeout).toHaveBeenCalledTimes(3);
 
 		expect(console.log).toHaveBeenCalledWith(2);
 		expect(console.log).toHaveBeenCalledWith(3);
