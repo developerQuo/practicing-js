@@ -8,5 +8,11 @@ let mary = { name: 'Mary', surname: 'Key', id: 3 };
 let users = [john, pete, mary];
 
 describe('객체 매핑하기', () => {
-	it('returns objects that have fullName property', () => {});
+	it('returns objects that have fullName property', () => {
+		expect(userMapper(users)).toEqual([
+			{ fullName: 'John Smith', id: 1 },
+			{ fullName: 'Pete Hunt', id: 2 },
+			{ fullName: 'Mary Key', id: 3 },
+		]);
+	});
 });
