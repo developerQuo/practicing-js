@@ -8,5 +8,7 @@ let mary = { name: 'Mary', age: 29 };
 let arr = [john, pete, mary];
 
 describe('평균 나이 구하기', () => {
-	it('returns average age', () => {});
+	it('returns average age', () => {
+		expect(getAverageAge(arr)).toBe(28);
+	});
 });
