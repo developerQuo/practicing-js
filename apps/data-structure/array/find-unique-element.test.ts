@@ -14,5 +14,7 @@ let strings = [
 ];
 
 describe('중복 없는 요소 찾아내기', () => {
-	it('returns unique elements', () => {});
+	it('returns unique elements', () => {
+		expect(unique(strings)).toEqual(['Hare', 'Krishna', ':-0']);
+	});
 });
