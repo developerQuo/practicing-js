@@ -1,3 +1,3 @@
-export function unique(arr: string[]) {
-	return;
+export function unique(strings: string[]) {
+	return [...new Set(strings)];
 }
