@@ -11,5 +11,5 @@ export function getAxisDistance(
 	userLocation: number,
 	axisMaxLength: number
 ): [number, number] {
-	return [0, 0];
+	return [userLocation, axisMaxLength - userLocation];
 }
