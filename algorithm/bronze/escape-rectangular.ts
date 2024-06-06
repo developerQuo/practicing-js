@@ -4,7 +4,9 @@ export default function getShortestDistance(
 	w: number,
 	h: number
 ) {
-	return 0;
+	const xAixsDistances = getAxisDistance(x, w);
+	const yAixsDistances = getAxisDistance(y, h);
+	return Math.min(...xAixsDistances, ...yAixsDistances);
 }
 
 export function getAxisDistance(
