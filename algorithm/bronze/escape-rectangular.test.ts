@@ -9,7 +9,21 @@ import getShortestDistance, { getAxisDistance } from './escape-rectangular';
  * 직사각형의 경계선까지 가는 거리의 최솟값을 구하는 프로그램을 작성하시오.
  */
 describe('직사각형에서 탈출', () => {
-	it('returns 2 distance', () => {});
+	it('returns 2 distance', () => {
+		expect(getAxisDistance(6, 10)).toContain(6);
+		expect(getAxisDistance(6, 10)).toContain(4);
 
-	it('최소 거리 구하기', () => {});
+		expect(getAxisDistance(375, 1000)).toContain(375);
+		expect(getAxisDistance(375, 1000)).toContain(625);
+	});
+
+	it('최소 거리 구하기', () => {
+		expect(getShortestDistance(6, 2, 10, 3)).toBe(1);
+
+		expect(getShortestDistance(1, 1, 5, 5)).toBe(1);
+
+		expect(getShortestDistance(653, 375, 1000, 1000)).toBe(347);
+
+		expect(getShortestDistance(161, 181, 762, 375)).toBe(161);
+	});
 });
