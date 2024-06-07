@@ -1,14 +1,6 @@
 export default function calcRange(rangeX: number, rangeY: number) {
-	return 0;
+	return sumSequence(rangeY) - sumSequence(rangeX - 1);
 }
-
-const example = {
-	1: 1,
-	2: 2,
-	3: 1,
-};
-
-const example2 = [1, 2, 1];
 
 export function sumSequence(num: number) {
 	const sequence: number[] = [];
