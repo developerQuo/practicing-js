@@ -1,5 +1,5 @@
 import { describe, expect, it, test } from '@jest/globals';
-import { sumSequence } from './sum-of-a-sequence';
+import calcRange, { sumSequence } from './sum-of-a-sequence';
 
 /**
  * 쉽게 푸는 문제[https://www.acmicpc.net/problem/1292]
@@ -14,5 +14,7 @@ describe('쉽게 푸는 문제', () => {
 		expect(sumSequence(7)).toBe(18);
 	});
 
-	it('returns sums from x to y', () => {});
+	it('returns sums from x to y', () => {
+		expect(calcRange(3, 7)).toBe(15);
+	});
 });
