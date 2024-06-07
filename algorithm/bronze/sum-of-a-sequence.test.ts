@@ -1,4 +1,5 @@
 import { describe, expect, it, test } from '@jest/globals';
+import { sumSquence } from './sum-of-a-sequence';
 
 /**
  * 쉽게 푸는 문제[https://www.acmicpc.net/problem/1292]
@@ -7,7 +8,11 @@ import { describe, expect, it, test } from '@jest/globals';
  * 이러한 수열을 만들고 어느 일정한 구간을 주면 그 구간의 합을 구하는 것이다.
  */
 describe('쉽게 푸는 문제', () => {
-	test('The number returns sum of a sequence', () => {});
+	test('The number returns sum of a sequence', () => {
+		expect(sumSquence(3)).toBe(5);
+
+		expect(sumSquence(7)).toBe(18);
+	});
 
 	it('returns sums from x to y', () => {});
 });
