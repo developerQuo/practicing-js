@@ -10,7 +10,7 @@ const example = {
 
 const example2 = [1, 2, 1];
 
-export function sumSquence(num: number) {
+export function sumSequence(num: number) {
 	const sequence: number[] = [];
 	for (let i = 0; i < num; i++) {
 		const lastIndex = sequence.length - 1;
