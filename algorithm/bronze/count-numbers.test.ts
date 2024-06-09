@@ -11,7 +11,11 @@ import { describe, expect, it, test } from '@jest/globals';
  * 첫째 줄에 A, 둘째 줄에 B, 셋째 줄에 C가 주어진다. A, B, C는 모두 100보다 크거나 같고, 1,000보다 작은 자연수이다.
  */
 describe('숫자의 개수', () => {
-	it('counts digit within number', () => {});
+	it('counts digit within number', () => {
+		expect(countDigit(111332, 1)).toBe(3);
+
+		expect(countDigit(148032, 0)).toBe(1);
+	});
 
 	it('logs the count of numbers from 0 to 9', () => {});
 });
