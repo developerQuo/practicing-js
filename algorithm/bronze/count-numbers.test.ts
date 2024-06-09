@@ -1,5 +1,5 @@
-import { describe, expect, it, test } from '@jest/globals';
-import { countDigit } from './count-numbers';
+import { describe, expect, it, jest, test } from '@jest/globals';
+import countNumbers, { countDigit } from './count-numbers';
 
 /**
  * 숫자의 개수 [https://www.acmicpc.net/problem/2577]
@@ -18,5 +18,9 @@ describe('숫자의 개수', () => {
 		expect(countDigit(148032, 0)).toBe(1);
 	});
 
-	it('logs the count of numbers from 0 to 9', () => {});
+	it('returns the count array of numbers from 0 to 9', () => {
+		console.log = jest.fn();
+
+		expect(countNumbers(150, 266, 427)).toEqual([3, 1, 0, 2, 0, 0, 0, 2, 0, 0]);
+	});
 });
