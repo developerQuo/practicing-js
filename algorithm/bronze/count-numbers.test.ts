@@ -1,4 +1,5 @@
 import { describe, expect, it, test } from '@jest/globals';
+import { countDigit } from './count-numbers';
 
 /**
  * 숫자의 개수 [https://www.acmicpc.net/problem/2577]
