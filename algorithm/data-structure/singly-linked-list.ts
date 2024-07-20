@@ -74,15 +74,19 @@ class SinglyLinkedList {
 		// 빈 리스트면, undefined 리턴
 		if (!this.head) return undefined;
 
-		const previousHead = this.head;
+		const currentHead = this.head;
 		// 헤드를 다음 노드로 변경
 		this.head = this.head.next;
 		// 길이 1 감소
 		this.length--;
 
+		if (!this.length) {
+			this.tail = null;
+		}
+
 		// 이전 헤드 리턴
-		previousHead.next = null;
-		return previousHead;
+		currentHead.next = null;
+		return currentHead;
 	}
 }
 
