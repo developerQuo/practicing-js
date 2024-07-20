@@ -39,4 +39,11 @@ describe('singly linked list', () => {
 		expect(list.head?.val).toEqual('Goodbye');
 		expect(shiftedNode?.val).toBe('Hello');
 	});
+
+	test('unshift', () => {
+		list.unshift('wassup');
+
+		expect(list.length).toBe(4);
+		expect(list.head?.val).toEqual('wassup');
+	});
 });

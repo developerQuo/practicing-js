@@ -88,6 +88,28 @@ class SinglyLinkedList {
 		currentHead.next = null;
 		return currentHead;
 	}
+
+	unshift(value: Value) {
+		// 새로운 노드 생성
+		const newNode = new LinkedListNode(value);
+		// 빈 리스트의 경우, 헤드와 테일 모두 새 노드로 설정
+		if (!this.head) {
+			this.head = newNode;
+			this.tail = newNode;
+		} else {
+			// 아니라면,
+			// 헤드는 새 노드,
+			// 새 노드의 next는 현재 헤드다.
+			newNode.next = this.head;
+			this.head = newNode;
+		}
+
+		// 길이 1 증가
+		this.length++;
+
+		// 리스트 리턴
+		return this;
+	}
 }
 
 export default SinglyLinkedList;
