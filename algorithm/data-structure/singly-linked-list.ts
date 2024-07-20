@@ -1,8 +1,10 @@
+type Value = string | number | boolean;
+
 class LinkedListNode {
-	val: string;
+	val: Value;
 	next: unknown;
 
-	constructor(val: string) {
+	constructor(val: Value) {
 		this.val = val;
 		this.next = null;
 	}
@@ -19,14 +21,14 @@ class SinglyLinkedList {
 		this.length = 0;
 	}
 
-	push(value: string) {
+	push(value: Value) {
 		const newNode = new LinkedListNode(value);
-		// 첫 노드인 경우
-		if (!this.tail) {
-			// 새 노드를 헤드로 설정
+		// 첫 노드인 경우, 새 노드를 헤드로 설정
+		if (!this.head) {
 			this.head = newNode;
-		} else {
-			// 기존 테일의 다음 노드를 새 노드로 설정
+		}
+		// 기존 테일의 다음 노드를 새 노드로 설정
+		if (this.tail) {
 			this.tail.next = newNode;
 		}
 
@@ -35,6 +37,8 @@ class SinglyLinkedList {
 
 		// 길이 1 추가
 		this.length++;
+
+		return this;
 	}
 }
 
