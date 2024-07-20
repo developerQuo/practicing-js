@@ -18,9 +18,17 @@ describe('singly linked list', () => {
 		list.push('Goodbye');
 		list.push('!');
 
-		list.pop();
+		const removedNode = list.pop();
 
 		expect(list.length).toBe(2);
 		expect(list.tail?.val).toEqual('Goodbye');
+		expect(removedNode?.val).toBe('!');
+
+		list.pop();
+		list.pop();
+
+		expect(list.length).toBe(0);
+		expect(list.head).toBeNull();
+		expect(list.tail).toBeNull();
 	});
 });
