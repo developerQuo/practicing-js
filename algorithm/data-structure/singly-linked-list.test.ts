@@ -46,4 +46,11 @@ describe('singly linked list', () => {
 		expect(list.length).toBe(4);
 		expect(list.head?.val).toEqual('wassup');
 	});
+
+	test('get', () => {
+		expect(list.get(0)?.val).toBe('Hello');
+		expect(list.get(1)?.val).toBe('Goodbye');
+
+		expect(list.get(5)).toBeNull();
+	});
 });

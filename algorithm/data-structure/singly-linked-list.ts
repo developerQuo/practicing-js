@@ -110,6 +110,23 @@ class SinglyLinkedList {
 		// 리스트 리턴
 		return this;
 	}
+
+	get(index: number) {
+		// 인덱스가 0보다 작거나, 범위를 넘어가면 null을 리턴
+		if (index < 0 || index >= this.length) {
+			return null;
+		}
+
+		let current = this.head;
+		let currentIndex = 0;
+		// 인덱스만큼 이동해서 그 노드를 반환한다.
+		while (current) {
+			if (currentIndex++ === index) {
+				return current;
+			}
+			current = current.next;
+		}
+	}
 }
 
 export default SinglyLinkedList;
