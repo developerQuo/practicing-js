@@ -61,16 +61,15 @@ describe('singly linked list', () => {
 		expect(list.get(1)?.val).toBe('doctor');
 	});
 
-	// test('set', () => {
-	// 	list.set(0, 'wassup');
+	test('insert', () => {
+		expect(list.insert(0, 'wassup')).toBeTruthy();
+		expect(list.get(0)?.val).toBe('wassup');
+		expect(list.get(0)?.next?.val).toBe('Hello');
 
-	// 	console.log(list);
-	// 	expect(list.get(0)?.val).toBe('wassup');
-	// 	expect(list.get(0)?.next?.val).toBe('Hello');
+		expect(list.insert(1, 'doctor')).toBeTruthy();
+		expect(list.get(1)?.val).toBe('doctor');
+		expect(list.get(1)?.next?.val).toBe('Hello');
 
-	// 	list.set(1, 'doctor');
-
-	// 	expect(list.get(1)?.val).toBe('doctor');
-	// 	expect(list.get(1)?.next?.val).toBe('Hello');
-	// });
+		expect(list.insert(5, 'end')).toBeTruthy();
+	});
 });

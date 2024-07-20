@@ -138,21 +138,30 @@ class SinglyLinkedList {
 		return false;
 	}
 
-	// set(index: number, value: Value) {
-	// 	// 인덱스 앞 위치, 없으면 헤드의 노드를 가져온다.
-	// 	const previousNode = this.get(index - 1);
+	insert(index: number, value: Value) {
+		if (index < 0 || index > this.length) {
+			return false;
+		}
+		if (index === this.length) {
+			return !!this.push(value);
+		}
+		if (index === 0) {
+			return !!this.unshift(value);
+		}
 
-	// 	// 인덱스 위치의 노드를 새 노드의 next로 설정
-	// 	const newNode = new LinkedListNode(value);
-	// 	if (previousNode?.next) {
-	// 		newNode.next = previousNode.next;
-	// 		// 인덱스 앞 위치의 next를 새 노드로 설정
-	// 		previousNode.next = newNode;
-	// 	} else {
-	// 		newNode.next = this.head;
-	// 		this.head = newNode;
-	// 	}
-	// }
+		// 인덱스 앞 위치, 없으면 헤드의 노드를 가져온다.
+		const previousNode = this.get(index - 1);
+		if (previousNode?.next) {
+			// 인덱스 위치의 노드를 새 노드의 next로 설정
+			const newNode = new LinkedListNode(value);
+			newNode.next = previousNode.next;
+
+			// 인덱스 앞 위치의 next를 새 노드로 설정
+			previousNode.next = newNode;
+			this.length++;
+			return true;
+		}
+	}
 }
 
 export default SinglyLinkedList;
