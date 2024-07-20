@@ -69,6 +69,21 @@ class SinglyLinkedList {
 
 		return current;
 	}
+
+	shift() {
+		// 빈 리스트면, undefined 리턴
+		if (!this.head) return undefined;
+
+		const previousHead = this.head;
+		// 헤드를 다음 노드로 변경
+		this.head = this.head.next;
+		// 길이 1 감소
+		this.length--;
+
+		// 이전 헤드 리턴
+		previousHead.next = null;
+		return previousHead;
+	}
 }
 
 export default SinglyLinkedList;
