@@ -31,4 +31,17 @@ describe('singly linked list', () => {
 		expect(list.head).toBeNull();
 		expect(list.tail).toBeNull();
 	});
+
+	test('shift', () => {
+		let list = new SinglyLinkedList();
+		list.push('Hello');
+		list.push('Goodbye');
+		list.push('!');
+
+		const shiftedNode = list.shift();
+
+		expect(list.length).toBe(2);
+		expect(list.head?.val).toEqual('Goodbye');
+		expect(shiftedNode?.val).toBe('Hello');
+	});
 });
