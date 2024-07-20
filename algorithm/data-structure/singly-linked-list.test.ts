@@ -1,23 +1,23 @@
-import { describe, expect, test } from '@jest/globals';
+import { afterEach, beforeEach, describe, expect, test } from '@jest/globals';
 import SinglyLinkedList from './singly-linked-list';
 
 describe('singly linked list', () => {
-	test('push', () => {
-		let list = new SinglyLinkedList();
-		list.push('Hello');
-		list.push('Goodbye');
+	let list: SinglyLinkedList;
 
-		expect(list.length).toBe(2);
-		expect(list.head?.val).toEqual('Hello');
-		expect(list.tail?.val).toEqual('Goodbye');
-	});
-
-	test('pop', () => {
-		let list = new SinglyLinkedList();
+	beforeEach(() => {
+		list = new SinglyLinkedList();
 		list.push('Hello');
 		list.push('Goodbye');
 		list.push('!');
+	});
 
+	test('push', () => {
+		expect(list.length).toBe(3);
+		expect(list.head?.val).toEqual('Hello');
+		expect(list.tail?.val).toEqual('!');
+	});
+
+	test('pop', () => {
 		const removedNode = list.pop();
 
 		expect(list.length).toBe(2);
@@ -33,11 +33,6 @@ describe('singly linked list', () => {
 	});
 
 	test('shift', () => {
-		let list = new SinglyLinkedList();
-		list.push('Hello');
-		list.push('Goodbye');
-		list.push('!');
-
 		const shiftedNode = list.shift();
 
 		expect(list.length).toBe(2);
