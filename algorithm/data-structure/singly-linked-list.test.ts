@@ -11,4 +11,16 @@ describe('singly linked list', () => {
 		expect(list.head?.val).toEqual('Hello');
 		expect(list.tail?.val).toEqual('Goodbye');
 	});
+
+	test('pop', () => {
+		let list = new SinglyLinkedList();
+		list.push('Hello');
+		list.push('Goodbye');
+		list.push('!');
+
+		list.pop();
+
+		expect(list.length).toBe(2);
+		expect(list.tail?.val).toEqual('Goodbye');
+	});
 });
