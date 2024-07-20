@@ -2,7 +2,7 @@ type Value = string | number | boolean;
 
 class LinkedListNode {
 	val: Value;
-	next: unknown;
+	next: LinkedListNode | null;
 
 	constructor(val: Value) {
 		this.val = val;
@@ -39,6 +39,35 @@ class SinglyLinkedList {
 		this.length++;
 
 		return this;
+	}
+
+	pop() {
+		// 빈 리스트면, undefined 리턴
+		if (!this.head) return undefined;
+
+		let current = this.head;
+		let newTail = current;
+
+		// 반복문으로 n-1번 째 노드 찾기
+		while (current.next) {
+			newTail = current;
+			current = current.next;
+		}
+
+		// 테일 변경
+		this.tail = newTail;
+		// 테일 노드 next 제거
+		this.tail.next = null;
+		// 길이 1 감소
+		this.length--;
+
+		// 길이가 0이면 헤드도 제거.
+		if (!this.length) {
+			this.head = null;
+			this.tail = null;
+		}
+
+		return current;
 	}
 }
 
