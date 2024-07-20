@@ -53,4 +53,24 @@ describe('singly linked list', () => {
 
 		expect(list.get(5)).toBeNull();
 	});
+
+	test('set', () => {
+		const result = list.set(1, 'doctor');
+
+		expect(result).toBeTruthy();
+		expect(list.get(1)?.val).toBe('doctor');
+	});
+
+	// test('set', () => {
+	// 	list.set(0, 'wassup');
+
+	// 	console.log(list);
+	// 	expect(list.get(0)?.val).toBe('wassup');
+	// 	expect(list.get(0)?.next?.val).toBe('Hello');
+
+	// 	list.set(1, 'doctor');
+
+	// 	expect(list.get(1)?.val).toBe('doctor');
+	// 	expect(list.get(1)?.next?.val).toBe('Hello');
+	// });
 });

@@ -127,6 +127,32 @@ class SinglyLinkedList {
 			current = current.next;
 		}
 	}
+
+	set(index: number, value: Value) {
+		const currentNode = this.get(index);
+
+		if (currentNode) {
+			currentNode.val = value;
+			return true;
+		}
+		return false;
+	}
+
+	// set(index: number, value: Value) {
+	// 	// 인덱스 앞 위치, 없으면 헤드의 노드를 가져온다.
+	// 	const previousNode = this.get(index - 1);
+
+	// 	// 인덱스 위치의 노드를 새 노드의 next로 설정
+	// 	const newNode = new LinkedListNode(value);
+	// 	if (previousNode?.next) {
+	// 		newNode.next = previousNode.next;
+	// 		// 인덱스 앞 위치의 next를 새 노드로 설정
+	// 		previousNode.next = newNode;
+	// 	} else {
+	// 		newNode.next = this.head;
+	// 		this.head = newNode;
+	// 	}
+	// }
 }
 
 export default SinglyLinkedList;
