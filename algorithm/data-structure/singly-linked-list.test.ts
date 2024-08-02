@@ -79,4 +79,17 @@ describe('singly linked list', () => {
 		expect(list.get(1)?.val).toBe('!');
 		expect(list.length).toBe(2);
 	});
+
+	test('reverse', () => {
+		list.reverse();
+
+		expect(list.head?.val).toBe('!');
+		expect(list.head?.next?.val).toBe('Goodbye');
+		expect(list.head?.next?.next?.val).toBe('Hello');
+		// Hello -> Goodbye -> !
+		//  head             tail
+
+		// Hello <- Goodbye <- !
+		//  tail             head
+	});
 });

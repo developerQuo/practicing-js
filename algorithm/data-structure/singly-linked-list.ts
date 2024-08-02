@@ -184,6 +184,28 @@ class SinglyLinkedList {
 		// 제거된 노드 리턴
 		return removedNode;
 	}
+
+	reverse() {
+		// head, tail 위치 변경
+		[this.head, this.tail] = [this.tail, this.head];
+
+		let newNext;
+		let currentNode = this.tail;
+		// 리스트 길이만큼 반복. tail부터 next 순서대로
+		while (currentNode) {
+			console.log(currentNode);
+			// 다음 차례 저장
+			const nextLoop = currentNode.next;
+			// 현재 노드의 next 설정
+			currentNode.next = newNext;
+			// 새로운 next는 현재 노드로 변수 저장
+			newNext = currentNode;
+
+			currentNode = nextLoop;
+		}
+
+		return this;
+	}
 }
 
 export default SinglyLinkedList;
