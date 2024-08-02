@@ -162,6 +162,28 @@ class SinglyLinkedList {
 			return true;
 		}
 	}
+
+	remove(index: number) {
+		if (index < 0 || index >= this.length) return undefined;
+
+		// 마지막 요소 -> pop
+		if (index === this.length - 1) return this.pop();
+
+		// 첫 요소 -> shift
+		if (index === 0) return this.shift();
+
+		// 앞 요소를 가져와서 next를 다음, 다음으로 설정
+		const previousNode = this.get(index - 1);
+		const removedNode = previousNode?.next;
+		if (previousNode) {
+			previousNode.next = removedNode?.next ?? null;
+		}
+		// 길이 1 감소
+		this.length--;
+
+		// 제거된 노드 리턴
+		return removedNode;
+	}
 }
 
 export default SinglyLinkedList;

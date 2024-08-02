@@ -72,4 +72,11 @@ describe('singly linked list', () => {
 
 		expect(list.insert(5, 'end')).toBeTruthy();
 	});
+
+	test('remove', () => {
+		list.remove(1);
+
+		expect(list.get(1)?.val).toBe('!');
+		expect(list.length).toBe(2);
+	});
 });
