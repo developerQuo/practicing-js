@@ -1,8 +1,10 @@
 export function queue() {
-	const q: number[] = [];
+	const q: any[] = [];
 
-	const enqueue = (value: number) => q.unshift(value);
+	const enqueue = (value: any) => q.unshift(value);
 
 	const dequeue = () => q.pop();
-	return { enqueue, dequeue };
+
+	const getLength = () => q.length;
+	return { enqueue, dequeue, getLength };
 }
