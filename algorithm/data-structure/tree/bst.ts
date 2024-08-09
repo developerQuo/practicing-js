@@ -92,4 +92,26 @@ export class BinarySearchTree {
 		// 더 이상 큐에 노드가 없으면 종료하고 visited 리턴.
 		return visited;
 	}
+
+	dfs() {
+		const visited: number[] = [];
+		let current = this.root;
+
+		if (!current) return [];
+
+		function dfsRecursion(node: TreeNode) {
+			// 루트의 value를 visited에 넣는다.
+			visited.push(node.value);
+
+			// 만약, 루트의 left가 있으면 재귀로 호출한다.
+			if (node.left) dfsRecursion(node.left);
+
+			// 만약 right가 있으면 재귀로 호출한다.
+			if (node.right) dfsRecursion(node.right);
+		}
+
+		dfsRecursion(current);
+
+		return visited;
+	}
 }
